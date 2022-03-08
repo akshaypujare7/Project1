@@ -1,4 +1,69 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 1
+    <h1>Git</h1>
+
+    <h4>What is Git?</h4>
+    <p>Git is a free and open source distributed version control system. Git’s purpose is to keep track of
+        projects and
+        files as they change over time with manipulations happening from different users. Git stores information
+        about
+        the project’s progress on a repository. A repository has commits to the project or a set of references
+        to the
+        commits called heads. All this information is stored in the same folder as the project in a sub-folder
+        called
+        .git and will mostly be hidden by default in most systems.</p>
+    <div class="container">
+        <div class="col-8">
+            <h4>Git Branches</h4>
+            <p>
+                In Git, a branch is a pointer to a specific commit. The branch pointer moves along with each new commit
+                you make, and only diverges in the graph if a commit is made on a common ancestor commit. There are
+                various commands you can take in Git to work with your branches.
+            </p>
+            <p>Commands:-</p>
+            <p>1. Git branch yourbranchname &nbsp;&nbsp;#create your branch<br>
+                2. Git checkout yourbranchname &nbsp;&nbsp;#move to your branch</p>
+            <h4>Git Merge</h4>
+            <p>
+                The git merge command lets you take the independent lines of development created by git branch and
+                integrate them into a single branch.
+            </p>
+            <p>Commands:- </p>
+            <p>1. Git branch yourbranchname &nbsp;&nbsp;#create your branch<br>
+                2. Git checkout yourbranchname &nbsp;&nbsp;#move to your branch<br>
+                3. Make your changes!<br>
+                4. Git status &nbsp;&nbsp;#check your changes<br>
+                5. Git add * &nbsp;&nbsp;#stage your changes<br>
+                6. Git commit -m “your message here” &nbsp;&nbsp;#commit your changes<br>
+                7. Git checkout master &nbsp;&nbsp;#switch to master branch<br>
+                8. Git merge yourbranchname<br>
+                9. Git push &nbsp;&nbsp;#push changes back to remote</p>
+            <h4>Git Commit</h4>
+            <p>The git commit command captures a snapshot of the project's currently staged changes. Committed snapshots
+                can be thought of as “safe” versions of a project—Git will never change them unless we explicitly ask
+                it to. Prior to the execution of git commit, The git add command is used to promote or 'stage' changes
+                to the project that will be stored in a commit.</p>
+            <p>Commands:- </p>
+            <p>1. git commit &nbsp;&nbsp;#This will launch a text editor for message <br>
+                2. git commit -m "commit message" &nbsp;&nbsp;#commit by giving message</p>
+            <h4>Git Tags</h4>
+            <p>Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a point
+                in history that is used for a marked version release. A tag is like a branch that doesn’t
+                change. Unlike branches, tags, after being created, have no further history of commits.</p>
+            <p>Commands:- </p>
+            <p>1. git tag tagname <br>
+                2. git tag -a v2.7 &nbsp;&nbsp;#annotated tags<br>
+                3. git tag &nbsp;&nbsp;#to list all the tags</p>
+            <h4>Git Repository</h4>
+            <p>A Git repository is a virtual storage of your project. It allows you to save versions of your code, which
+                you can access when needed. </p>
+            <p>Commands:- </p>
+            <p>1. git init project_directory &nbsp;&nbsp;#this will initialize git to specified directory <br>
+                2. git clone repo_url &nbsp;&nbsp;#to clone a repository in local <br>
+                3. git remote add remote_name remote_repo_url &nbsp;&nbsp;#remote repo url to your local git config, and
+                set an upstream branch for your local branches. <br>
+                4. git push -u remote_name local_branch_name &nbsp;&nbsp;#map remote repository at to a ref in your
+                local repo under</p>
+        </div>
+    </div>
 {% endblock %}
