@@ -11,49 +11,73 @@
         them to be portable among any system running the Linux operating system (OS).
     </p>
     <div class="container">
-        <div class="col-8">
-            <h4>Docker Images</h4>
-            <p>
-                Docker Image is a template that contains the application, and all the dependencies required to run that
-                application on Docker.A Docker image is a file used to execute code in a Docker container. Docker images
-                act as a set of instructions to build a Docker container, like a template. Docker images also act as the
-                starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM)
-                environments
-            </p>
-            <h4>Docker Repositories</h4>
-            <p>Docker Hub repositories allow you share container images with your team, customers, or the Docker
-                community at large.
+        <div class="row">
+            <div class="col-8">
+                <h4>Docker Images</h4>
+                <p>
+                    Docker Image is a template that contains the application, and all the dependencies required to run
+                    that
+                    application on Docker.A Docker image is a file used to execute code in a Docker container. Docker
+                    images
+                    act as a set of instructions to build a Docker container, like a template. Docker images also act as
+                    the
+                    starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM)
+                    environments
+                </p>
+                <h4>Docker Repositories</h4>
+                <p>Docker Hub repositories allow you share container images with your team, customers, or the Docker
+                    community at large.
 
-                Docker images are pushed to Docker Hub through the docker push command. A single Docker Hub repository
-                can hold many Docker images (stored as tags).</p>
-            <h4>Docker commands:- </h4>
-            <p>
-                1. docker –version &nbsp;&nbsp; #This command is used to get the currently installed version of
-                docker<br>
-                2. docker pull image_name&nbsp;&nbsp; #This command is used to pull images from the docker
-                repository<br>
-                3. docker run -it -d image_name &nbsp;&nbsp; #This command is used to create a container from an
-                image<br>
-                4. docker ps &nbsp;&nbsp; #This command is used to list the running containers<br>
-                5. docker ps -a &nbsp;&nbsp; #This command is used to show all the running and exited containers <br>
-                6. docker stop container_id &nbsp;&nbsp; #This command stops a running container<br>
-                7. docker kill container_id &nbsp;&nbsp; #This command kills the container by stopping its execution
-                immediately. <br>
-                8. docker commit conatainer_id username/imagename &nbsp;&nbsp; #This command creates a new image of an
-                edited container on the local system<br>
-                9. docker login &nbsp;&nbsp; #This command is used to login to the docker hub repository <br>
-                10. docker push username/image name &nbsp;&nbsp; #This command is used to push an image to the docker
-                hub repository <br>
-                11. docker images &nbsp;&nbsp; #This command lists all the locally stored docker images <br>
-                12. docker rm container_id &nbsp;&nbsp; #This command is used to delete a stopped container <br>
-                13. docker build path_to_docker_file &nbsp;&nbsp; #This command is used to build an image from a
-                specified docker file <br>
-            </p>
-            <h4>Access container using terminal</h4>
-            <p>1. Use docker ps to get the name of the existing container <br>
-                2. Use the command docker exec -it container_name /bin/bash to get a bash shell in the container <br>
-                3. docker-compose run container_name command to run the container
-            </p>
+                    Docker images are pushed to Docker Hub through the docker push command. A single Docker Hub
+                    repository
+                    can hold many Docker images (stored as tags).</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/dockercontainer.png') }}" height="300px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
         </div>
+        <div class="row">
+            <div class="col-8">
+                <h4>Docker commands:- </h4>
+                <p>
+                    1. docker –version &nbsp;&nbsp; #This command is used to get the currently installed version of
+                    docker<br>
+                    2. docker pull image_name&nbsp;&nbsp; #This command is used to pull images from the docker
+                    repository<br>
+                    3. docker run -it -d image_name &nbsp;&nbsp; #This command is used to create a container from an
+                    image<br>
+                    4. docker ps &nbsp;&nbsp; #This command is used to list the running containers<br>
+                    5. docker ps -a &nbsp;&nbsp; #This command is used to show all the running and exited containers
+                    <br>
+                    6. docker stop container_id &nbsp;&nbsp; #This command stops a running container<br>
+                    7. docker kill container_id &nbsp;&nbsp; #This command kills the container by stopping its execution
+                    immediately. <br>
+                    8. docker commit conatainer_id username/imagename &nbsp;&nbsp; #This command creates a new image of
+                    an
+                    edited container on the local system<br>
+                    9. docker login &nbsp;&nbsp; #This command is used to login to the docker hub repository <br>
+                    10. docker push username/image name &nbsp;&nbsp; #This command is used to push an image to the
+                    docker
+                    hub repository <br>
+                    11. docker images &nbsp;&nbsp; #This command lists all the locally stored docker images <br>
+                    12. docker rm container_id &nbsp;&nbsp; #This command is used to delete a stopped container <br>
+                    13. docker build path_to_docker_file &nbsp;&nbsp; #This command is used to build an image from a
+                    specified docker file <br>
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/dockerdoodle.png') }}" height="300px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <h4>Access container using terminal</h4>
+        <p>1. Use docker ps to get the name of the existing container <br>
+            2. Use the command docker exec -it container_name /bin/bash to get a bash shell in the container
+            <br>
+            3. docker-compose run container_name command to run the container
+        </p>
     </div>
 {% endblock %}

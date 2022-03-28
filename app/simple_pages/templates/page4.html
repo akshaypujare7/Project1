@@ -11,32 +11,61 @@
         detect problems. Furthermore you push the executables into increasingly production-like environments to ensure
         the software will work in production</p>
     <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h4>How my project is setup to use Github Actions</h4>
+                <p>GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD.
+                    Build,
+                    test, and deploy your code right from GitHub. Make code reviews, branch management, and issue
+                    triaging
+                    work the way you want.</p>
+                <p>In the github actions I have added repositories secrets that help me connect with Heroku and Docker
+                    when
+                    ever my code is updated and committed with any new changes. In these secrets I have set
+                    DOCKER_PASSWORD,
+                    DOCKER_USERNAME and HEROUKU_API_KEY.</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/gitactions.png') }}" height="250px" class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
         <div class="col-8">
-            <h4>How my project is setup to use Github Actions</h4>
-            <p>GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build,
-                test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging
-                work the way you want.</p>
-            <p>In the github actions I have added repositories secrets that help me connect with Heroku and Docker when
-                ever my code is updated and committed with any new changes. In these secrets I have set DOCKER_PASSWORD,
-                DOCKER_USERNAME and HEROUKU_API_KEY.</p>
             <h4>How I can review code using development server</h4>
             <p>There are two seperate workflow files 1. dev.yml and 2.prod.yml. The development workflow deploys the app
-                on development server whenever a pull request is made. This helps in keeping the production server free of
+                on development server whenever a pull request is made. This helps in keeping the production server free
+                of
                 bugs and always up and running. Whenever someone implements a new feature on new branch and makes a pull
                 request, we can review what changes he/she made and check if those changes are not breaking the code by
-                testing it on development server and checking their test cases integrity. If the code is clean and bug free
+                testing it on development server and checking their test cases integrity. If the code is clean and bug
+                free
                 then we can merge pull request to master plan which will deploy the app on development server.</p>
-            <h4>Deploy master to production server</h4>
-            <p>The prod.yml workflow file has the information which helps us deploy master to production server. Whenever a
-            code is committed and pushed on master branch or any merge pull request is made the app will get deployed on
-            production server. Before deploying on production server it will run all the test cases and if and only if all
-            the test cases pass then it will be deployed on heroku production app and on docker hub</p>
-            <h4>Deploy an image of project to DockerHub when master updated</h4>
-            <p>The prod.yml workflow file has the information which helps us deploy master to docker container. Whenever
-            master is updated the workflow will run pytests, setup the python environment, install the dependencies, and install
-            all the required packages mentioned in requirements.txt file. Then it will login to DockerHub account using the
-            DOCKER_USERNAME and DOCKER_PASSWORD mentioned in github actions secrets and deploy the latest image in the mentioned
-            Dcoker repository under image tag</p>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4>Deploy master to production server</h4>
+                <p>The prod.yml workflow file has the information which helps us deploy master to production server.
+                    Whenever a
+                    code is committed and pushed on master branch or any merge pull request is made the app will get
+                    deployed on
+                    production server. Before deploying on production server it will run all the test cases and if and
+                    only if all
+                    the test cases pass then it will be deployed on heroku production app and on docker hub</p>
+                <h4>Deploy an image of project to DockerHub when master updated</h4>
+                <p>The prod.yml workflow file has the information which helps us deploy master to docker container.
+                    Whenever
+                    master is updated the workflow will run pytests, setup the python environment, install the
+                    dependencies, and install
+                    all the required packages mentioned in requirements.txt file. Then it will login to DockerHub
+                    account using the
+                    DOCKER_USERNAME and DOCKER_PASSWORD mentioned in github actions secrets and deploy the latest image
+                    in the mentioned
+                    Dcoker repository under image tag</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/devprod.png') }}" height="200px" class="d-block w-100"
+                     alt="...">
+            </div>
         </div>
     </div>
 {% endblock %}
