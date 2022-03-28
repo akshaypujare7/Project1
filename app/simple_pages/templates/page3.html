@@ -7,83 +7,109 @@
         helps you to write simple and scalable test cases for databases, APIs, or UI. PyTest is mainly used for
         writing tests for APIs. It helps to write tests from simple unit tests to complex functional tests.</p>
     <div class="container">
-        <div class="col-8">
-            <h4>Code examples</h4>
-            <p>1. <br>
-                &nbsp;&nbsp;&nbsp;def test_request_index(client):<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""This makes the index page"""<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = client.get("/")<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert response.status_code == 200<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert b"Index Page" in response.data<br>
-            </p>
-            <p>2. <br>
-                &nbsp;&nbsp;&nbsp;def test_request_git(client):<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""This makes the git page"""<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = client.get("/")<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert response.status_code == 200<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert b"What is Git?" in response.data<br>
-            </p>
-            <p>3. <br>
-                &nbsp;&nbsp;&nbsp;def test_request_page_not_found(client):<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""This makes the error page"""<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = client.get("/page5")<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert response.status_code == 404<br>
-            </p>
-            <h4>Important links</h4>
-            <p>
-                Flask documentation :-<a href="https://flask.palletsprojects.com/en/2.0.x/">https://flask.palletsprojects.com/en/2.0.x/</a><br>
-                Flask blueprint documentation :- <a href="https://flask.palletsprojects.com/en/2.0.x/blueprints/">https://flask.palletsprojects.com/en/2.0.x/blueprints/</a><br>
-                Flask testing with pytest :- <a href="https://flask.palletsprojects.com/en/2.0.x/testing/">https://flask.palletsprojects.com/en/2.0.x/testing/</a>
-            </p>
-            <h4> Project workflow structure</h4>
-            <p>
-                - Project Root folder <br>
-                &ensp;&ensp;-workflows <br>
-                &emsp;&emsp;dev.yml <- Development Workflow configuration file to create and maintain CI/CD pipeline
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;between local, github and heroku deployement. <br>
-                &emsp;&emsp;prod.yml <- Production Workflow configuration file to create and maintain CI/CD pipeline
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;between local, github and heroku deployement. <br>
-                &ensp;&ensp;-app <br>
-                &emsp;&emsp;-simple pages<br>
-                &emsp;&emsp;&emsp;&emsp;-templates <br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- index.html <- Home page<br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page1.html <- Information about git<br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page2.html <- Information about docker<br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page3.html <- Information about Python and Flask<br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page4.html <- Information about CI/CD<br>
-                &emsp;&emsp;&emsp;&emsp;- __init__.py <- It is used to mark directories on disk as Python package
-                directories <br>
-                &emsp;&emsp;-static<br>
-                &emsp;&emsp;&emsp;&emsp;-css <- All the css files required for style the webpages are stored here <br>
-                &emsp;&emsp;&emsp;&emsp;-images <- All the images shown on the webpage are stored in this directory <br>
-                &emsp;&emsp;&emsp;&emsp;-js <- All the required javascript files used for functionality are stored here
-                <br>
-                &emsp;&emsp;-templates <- the base html file which stores header and footer information is stored in
-                this &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;for reuse and to keep the code DRY<br>
-                &emsp;&emsp;&emsp;&emsp;-run.py <- The run.py module is used to locate and run Python modules without
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; importing them first <br>
-                &emsp;&emsp;-tests <- All the test cases required to test various webpages are stored in this folder<br>
-                &emsp;&emsp;-.coveragerc <- This makes it easier to re-run coverage.py with consistent settings. <br>
-                &emsp;&emsp;-.dockerignore <- It is used to ignore files and folders when you try to build a Docker
-                Image. <br>
-                &emsp;&emsp;-.gitignore <-Tells Git which files to ignore when committing your project to the GitHub
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; repository <br>
-                &emsp;&emsp;-.pylintrc <- Pylint is a tool that checks for errors in Python code, tries to enforce a
-                coding &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; standard and looks for code smells <br>
-                &emsp;&emsp;-docker-compose.yml <- Orchestration file that contains the configuration to develop
-                locally, &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; it overrides the Dockerfile to run the flask
-                development server instead of running &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; the gunicorn
-                server that is used for hosting on Heroku <br>
-                &emsp;&emsp;-Dockerfile <-File used to create an image to run in a container that runs the program<br>
-                &emsp;&emsp;-heroku.yml <- It is a manifest you can use to define your Heroku app. It allows you to
-                build &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; docker images on heroku and specify addon and config
-                vars to create app<br>
-                &emsp;&emsp;-readme.md <- It is used to provide orientation and guide on how to use your code for &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                engineers browsing code, especially first-time users. <br>
-                &emsp;&emsp;-requirements.txt <- It is used for specifying what python packages are required to run the
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; project you are looking at<br>
-                &emsp;&emsp;-setup.py <-This allows you to easily install Python packages.<br>
-            </p>
+        <div class="row">
+            <div class="col-8">
+                <h4>Code examples</h4>
+                <p>1. <br>
+                    &nbsp;&nbsp;&nbsp;def test_request_index(client):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""This makes the index page"""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = client.get("/")<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert response.status_code == 200<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert b"Index Page" in response.data<br>
+                </p>
+                <p>2. <br>
+                    &nbsp;&nbsp;&nbsp;def test_request_git(client):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""This makes the git page"""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = client.get("/")<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert response.status_code == 200<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert b"What is Git?" in response.data<br>
+                </p>
+                <p>3. <br>
+                    &nbsp;&nbsp;&nbsp;def test_request_page_not_found(client):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""This makes the error page"""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = client.get("/page5")<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert response.status_code == 404<br>
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/pytest.svg') }}" height="300px" class="d-block w-100"
+                     alt="...">
+            </div>
         </div>
+
+        <h4>Important links</h4>
+        <p>
+            Flask documentation :-<a href="https://flask.palletsprojects.com/en/2.0.x/">https://flask.palletsprojects.com/en/2.0.x/</a><br>
+            Flask blueprint documentation :- <a href="https://flask.palletsprojects.com/en/2.0.x/blueprints/">https://flask.palletsprojects.com/en/2.0.x/blueprints/</a><br>
+            Flask testing with pytest :- <a href="https://flask.palletsprojects.com/en/2.0.x/testing/">https://flask.palletsprojects.com/en/2.0.x/testing/</a>
+        </p>
+        <div class="row">
+            <div class="col-8">
+                <h4> Project workflow structure</h4>
+                <p>
+                    - Project Root folder <br>
+                    &ensp;&ensp;-workflows <br>
+                    &emsp;&emsp;dev.yml <- Development Workflow configuration file to create and maintain CI/CD pipeline
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;between local, github and heroku deployement. <br>
+                    &emsp;&emsp;prod.yml <- Production Workflow configuration file to create and maintain CI/CD pipeline
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;between local, github and heroku deployement. <br>
+                    &ensp;&ensp;-app <br>
+                    &emsp;&emsp;-simple pages<br>
+                    &emsp;&emsp;&emsp;&emsp;-templates <br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- index.html <- Home page<br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page1.html <- Information about git<br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page2.html <- Information about docker<br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page3.html <- Information about Python and Flask<br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- page4.html <- Information about CI/CD<br>
+                    &emsp;&emsp;&emsp;&emsp;- __init__.py <- It is used to mark directories on disk as Python package
+                    directories <br>
+                    &emsp;&emsp;-static<br>
+                    &emsp;&emsp;&emsp;&emsp;-css <- All the css files required for style the webpages are stored here
+                    <br>
+                    &emsp;&emsp;&emsp;&emsp;-images <- All the images shown on the webpage are stored in this directory
+                    <br>
+                    &emsp;&emsp;&emsp;&emsp;-js <- All the required javascript files used for functionality are stored
+                    here
+                    <br>
+                    &emsp;&emsp;-templates <- the base html file which stores header and footer information is stored in
+                    this &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;for reuse and to keep the code DRY<br>
+                    &emsp;&emsp;&emsp;&emsp;-run.py <- The run.py module is used to locate and run Python modules
+                    without
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; importing them first <br>
+                    &emsp;&emsp;-tests <- All the test cases required to test various webpages are stored in this folder<br>
+                    &emsp;&emsp;-.coveragerc <- This makes it easier to re-run coverage.py with consistent settings.
+                    <br>
+                    &emsp;&emsp;-.dockerignore <- It is used to ignore files and folders when you try to build a Docker
+                    Image. <br>
+                    &emsp;&emsp;-.gitignore <-Tells Git which files to ignore when committing your project to the GitHub
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; repository <br>
+                    &emsp;&emsp;-.pylintrc <- Pylint is a tool that checks for errors in Python code, tries to enforce a
+                    coding &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; standard and looks for code smells <br>
+                    &emsp;&emsp;-docker-compose.yml <- Orchestration file that contains the configuration to develop
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    locally, it overrides the Dockerfile to run the flask
+                    development server instead of &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;running the gunicorn
+                    server that is used for hosting on Heroku <br>
+                    &emsp;&emsp;-Dockerfile <-File used to create an image to run in a container that runs the
+                    program<br>
+                    &emsp;&emsp;-heroku.yml <- It is a manifest you can use to define your Heroku app. It allows you to
+                    build &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; docker images on heroku and specify addon and
+                    config
+                    vars to create app<br>
+                    &emsp;&emsp;-readme.md <- It is used to provide orientation and guide on how to use your code for
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    engineers browsing code, especially first-time users. <br>
+                    &emsp;&emsp;-requirements.txt <- It is used for specifying what python packages are required to run
+                    the
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; project you are looking at<br>
+                    &emsp;&emsp;-setup.py <-This allows you to easily install Python packages.<br>
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/workflow.png') }}" height="800px" class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+
     </div>
 {% endblock %}
