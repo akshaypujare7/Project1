@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>OOPS Concepts</h1>
+    <div class="container">
+        <div class="row">
+            <h4>Encapsulation</h4>
+            <div class="col-8">
+                <p>
+                    Encapsulation in Python describes the concept of bundling data and methods within a single unit. So,
+                    for example, when you create a class, it means you are implementing encapsulation. A class is an
+                    example of encapsulation as it binds all the data members (instance variables) and methods into a
+                    single unit.
+                </p>
+                <p>
+                    In the given image we can see Addition instance that is stored inside the calculation variable
+                    encapsulates the data and the functionality to work on the data to perform get result calculation
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/encapsulation.png') }}" height="250px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <div class="row">
+            <h4>Abstraction</h4>
+            <div class="col-8">
+                <p>Abstraction is used to hide the internal functionality of the function from the users. The users only
+                    interact with the basic implementation of the function, but inner working is hidden. User is
+                    familiar with that "what function does" but they don't know "how it does."
+                    In simple words, we all use the smartphone and very much familiar with its functions such as camera,
+                    voice-recorder, call-dialing, etc., but we don't know how these operations are happening in the
+                    background. Let's take another example - When we use the TV remote to increase the volume. We don't
+                    know how pressing a key increases the volume of the TV. We only know to press the "+" button to
+                    increase the volume.</p>
+                <p>As we can see get_result is not preforming directly addition function while it is simply calling a
+                    loop and then within the loop there is add function, so this is basically abstracting the process of
+                    doing the addition on a list of numbers. We have one function which is a loop while we have another
+                    function which is add in order to have result of the list we need to have both </p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/abstraction.png') }}" height="250px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <div class="row">
+            <h4>Inheritance</h4>
+            <div class="col-8">
+                <p>Inheritance is the capability of one class to derive or inherit the properties from another class.
+                    The benefits of inheritance are:
+
+
+                    It represents real-world relationships well.
+                    It provides reusability of a code. We don’t have to write the same code again and again. Also, it
+                    allows us to add more features to a class without modifying it.
+                    It is transitive in nature, which means that if class B inherits from another class A, then all the
+                    subclasses of B would automatically inherit from class A.</p>
+                <p> As we can see from the image that abstract class Calculation which is the base for addition,
+                    subtraction, multiplication. It allows all the subclasses to inherit the capabilities of its parent
+                    class which is Calculator</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/inheritance.png') }}" height="300px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <div class="row">
+            <h4>Polymorphism</h4>
+            <div class="col-8">
+                <p>Polymorphism means having vivid or different forms. In the programming world, Polymorphism refers to
+                    the ability of the function with the same name to carry different functionality altogether. It
+                    creates a structure that can use many forms of objects.
+                    This permits functions/arguments to use entities of different types at different times.
+                    In object-oriented programming, Polymorphism allows a particular object referring to a particular
+                    class to be used in a similar fashion as if it was a different object referring to altogether a
+                    different class.</p>
+                <p>Python can use different types of classes, in the same way, using Polymorphism. To serve this
+                    purpose, one can create a loop that iterates through a tuple of objects. Post which, one can call
+                    the methods without having a look at the type of class to which the object belongs to.</p>
+                <p>If we observe the above figure get_result() which is class calculations method is inherited by the
+                    child classes addition and multiplication, and they implement the same method in different ways they
+                    are overriding the methods and using them in their way. Class "addition" is returning the added
+                    result and class "multiplication" is returning the multiplied result</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/poly.png') }}" height="300px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+    </div>
+{% endblock %}

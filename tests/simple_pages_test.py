@@ -9,6 +9,10 @@ def test_request_main_menu_links(client):
     assert b'<a class="nav-link" href="/page2">Docker</a>' in response.data
     assert b'<a class="nav-link" href="/page3">Flask</a>' in response.data
     assert b'<a class="nav-link" href="/page4">CI/CD</a>' in response.data
+    assert b'<a class="nav-link" href="/page5">Concepts</a>' in response.data
+    assert b'<a class="nav-link" href="/page6">AAA</a>' in response.data
+    assert b'<a class="nav-link" href="/page7">OOPS</a>' in response.data
+    assert b'<a class="nav-link" href="/page8">SOLID</a>' in response.data
 
 
 def test_request_index(client):
@@ -45,8 +49,32 @@ def test_request_page4(client):
     assert response.status_code == 200
     assert b"What is CI/CD?" in response.data
 
+def test_request_page5(client):
+    """This makes the index page"""
+    response = client.get("/page5")
+    assert response.status_code == 200
+    assert b"Pylint is a tool that checks for errors in Python code" in response.data
+
+def test_request_page6(client):
+    """This makes the index page"""
+    response = client.get("/page6")
+    assert response.status_code == 200
+    assert b"What is AAA testing?" in response.data
+
+def test_request_page7(client):
+    """This makes the index page"""
+    response = client.get("/page7")
+    assert response.status_code == 200
+    assert b"OOPS Concepts" in response.data
+
+def test_request_page8(client):
+    """This makes the index page"""
+    response = client.get("/page8")
+    assert response.status_code == 200
+    assert b"What is SOLID?" in response.data
+
 
 def test_request_page_not_found(client):
     """This makes the index page"""
-    response = client.get("/page5")
+    response = client.get("/page9")
     assert response.status_code == 404

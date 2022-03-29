@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>AAA testing</h1>
+
+    <h4>What is AAA testing?</h4>
+    <p>Arrange-Act-Assert is a great way to structure test cases. It prescribes an order of operations:</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <p>1. Arrange inputs and targets. Arrange steps should set up the test case. Does the test require any
+                    objects or special settings? Does it need to prep a database? Does it need to log into a web app?
+                    Handle all of these operations at the start of the test.</p>
+                <p>2. Act on the target behavior. Act steps should cover the main thing to be tested. This could be
+                    calling a function or method, calling a REST API, or interacting with a web page. Keep actions
+                    focused on the target behavior.</p>
+                <p>3. Assert expected outcomes. Act steps should elicit some sort of response. Assert steps verify the
+                    goodness or badness of that response. Sometimes, assertions are as simple as checking numeric or
+                    string values. Other times, they may require checking multiple facets of a system. Assertions will
+                    ultimately determine if the test passes or fails.</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/aaatesting.png') }}" height="200px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4>Importance & Benefits of AAA testing</h4>
+                <p>There are many reasons that make software testing important:
+
+                    Software testing is essential to notice the defects and errors which may occur during the
+                    development phases.
+                    Software testing is important since it verifies the customer’s reliability and their content with
+                    application.
+                    The software testing is very important to test the quality of the product and the good quality
+                    product supplied to their customer helps to gain the confidence.
+                    Testing is necessary when you give the facilities to the customers like delivery of high quality
+                    product or software application which requires minimal maintenance cost and gives good results and
+                    precise results.
+                    Software testing has to be carried out because it gives effective performance of the software
+                    application.
+                    It makes sure that the application should not result into any failures because it may lead into
+                    extra expenses.
+                    It is necessary to stay in the business.</p>
+                <p>There are many benefits of AAA in unit testing, but the main one is that it saves time.
+
+                    It saves time because it helps developers write a test without thinking about how to structure the
+                    unit test method. With AAA, developers just follow the instructions that are provided to them.
+
+                    In addition, you can use AAA for a variety of types of testing, including integration testing,
+                    system testing, and acceptance testing.</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/impoftest.png') }}" height="300px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4>AAA testing with calculator project</h4>
+                <p>Here if we see in the given image we can see AAA testing, this image is taken from calculator
+                    project. First is declaring variables using constructors so that same variables can be used multiple
+                    times second is performing the action to be taken according to the class i.e addition class is
+                    performing addition action. Third is asserting values and checking whether the action is correct or
+                    wrong</p>
+            </div>
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/aaawithcalc.png') }}" height="300px"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+    </div>
+{% endblock %}
